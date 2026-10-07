@@ -45,7 +45,7 @@ header.top{position:sticky;top:0;z-index:20;
   padding-top:calc(22px + var(--safe-t));padding-bottom:16px;
   padding-left:calc(var(--gutter) + var(--safe-l));padding-right:calc(var(--gutter) + var(--safe-r));
   display:flex;justify-content:space-between;align-items:center;gap:16px;
-  background:rgba(0,0,0,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  background:#000;border-bottom:1px solid var(--line)}
 .top .tag{font-family:var(--display);font-weight:300;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .logo-ds{height:clamp(18px,4.4vw,26px);width:auto}
 
@@ -67,7 +67,7 @@ header.top{position:sticky;top:0;z-index:20;
 
 /* Chapters */
 section.ch{padding-block:clamp(40px,9vw,80px) 0;scroll-margin-top:calc(60px + var(--safe-t))}
-.ch-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+.ch-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:22px}
 .ch-num{font-family:var(--display);font-weight:700;font-size:clamp(34px,9vw,60px);line-height:1;color:var(--accent)}
 .ch-title{font-size:clamp(20px,5vw,30px);font-weight:700;margin:0;letter-spacing:-.01em}
 .ch-en{font-family:var(--display);font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
@@ -110,8 +110,10 @@ section.ch{padding-block:clamp(40px,9vw,80px) 0;scroll-margin-top:calc(60px + va
 footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);line-height:1.7}
 
 /* Pinned Hanwha mark */
-.hanwha{position:fixed;z-index:30;right:calc(16px + var(--safe-r));bottom:calc(28px + var(--safe-b));
-  padding:10px 12px;border-radius:8px;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);pointer-events:none}
+.hanwha{position:fixed;z-index:30;left:0;right:0;bottom:0;background:#000;border-top:1px solid var(--line);
+  display:flex;justify-content:flex-end;align-items:center;
+  padding-top:16px;padding-bottom:calc(22px + var(--safe-b));
+  padding-left:calc(var(--gutter) + var(--safe-l));padding-right:calc(var(--gutter) + var(--safe-r))}
 .hanwha img{height:clamp(22px,5.6vw,32px);width:auto}
 
 @media (orientation:landscape) and (max-height:500px){
