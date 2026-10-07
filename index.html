@@ -274,5 +274,13 @@ document.addEventListener('click',function(e){
   e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});
 });
 </script>
+<script>
+// Keep the address clean: drop any #section, ?query or index.html from the URL bar
+(function(){try{
+  var l=location; if(l.protocol==='file:') return;
+  var clean=l.pathname.replace(/index\.html$/,'');
+  if(l.hash||l.search||clean!==l.pathname) history.replaceState(null,'',clean);
+}catch(e){}})();
+</script>
 </body>
 </html>
