@@ -6,7 +6,20 @@
 <meta name="theme-color" content="#000000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Hanwha 63 Building New Media Content Proposal</title>
+<title>Hanwha · 63 New Media Content Proposal</title>
+<meta name="description" content="d'strict">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="d'strict">
+<meta property="og:title" content="Hanwha · 63 New Media Content Proposal">
+<meta property="og:description" content="d'strict">
+<meta property="og:url" content="https://siljongsingo.github.io/hanwha63/">
+<meta property="og:image" content="https://siljongsingo.github.io/hanwha63/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hanwha · 63 New Media Content Proposal">
+<meta name="twitter:description" content="d'strict">
+<meta name="twitter:image" content="https://siljongsingo.github.io/hanwha63/og.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -124,6 +137,8 @@ footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);font-si
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
+<!-- Visit counter (GoatCounter): page views + video plays. Dashboard: https://dstrict-hanwha63.goatcounter.com -->
+<script data-goatcounter="https://dstrict-hanwha63.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -230,11 +245,18 @@ footer{margin-top:72px;padding-top:20px;border-top:1px solid var(--line);font-si
 
 
 <script>
+function cardTitle(el){var c=el.closest('.card'),h=c&&c.querySelector('h3');var s=el.closest('section.ch'),n=s&&s.querySelector('.ch-num');return (n?n.textContent+' ':'')+(h?h.textContent:'');}
+function track(name){try{if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:name,title:name,event:true});}}catch(e){}}
+// Count taps on "YouTube에서 보기"
+document.addEventListener('click',function(e){var a=e.target.closest('.ytlink');if(a)track('YouTube 이동: '+cardTitle(a));});
+</script>
+<script>
 // Tap a thumbnail to play the video inside the page; only one plays at a time.
 document.addEventListener('click',function(e){
   var btn=e.target.closest('.player[data-id] button'); if(!btn) return;
   document.querySelectorAll('.player[data-orig]').forEach(function(p){p.innerHTML=p.getAttribute('data-orig');p.removeAttribute('data-orig');});
   var box=btn.parentNode, id=box.getAttribute('data-id');
+  track('재생: '+cardTitle(btn));
   box.setAttribute('data-orig',box.innerHTML);
   var f=document.createElement('iframe');
   f.src='https://www.youtube.com/embed/'+id+'?autoplay=1&playsinline=1&rel=0';
